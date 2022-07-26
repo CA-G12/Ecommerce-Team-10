@@ -1,8 +1,12 @@
+/* google fonts cdn */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
 }
 
 :root{
