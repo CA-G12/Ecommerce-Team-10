@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+:root{
+    --mainColor: #000;
+    --secondColor: #fff;
+    --thirdColor: #f00;
+}
+
+body{
+    
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--mainColor);
+    border-radius: 5px;
+    color: var(--mainColor);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: var(--mainColor);
+    color: var(--secondColor);
+}
+
+@media (min-width: 768px){
+    .container{
+        width: 100%;
+    }
+}
