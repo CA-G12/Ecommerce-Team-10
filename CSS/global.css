@@ -19,8 +19,10 @@
     --box-shadow : 0 .5rem 1rem rgba(0,0,0,.1);
 }
 
-body{
-    
+html{
+    overflow: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
 }
 
 .container{
@@ -29,23 +31,29 @@ body{
     margin: 0 auto;
     padding: 0 15px;
 }
+a {
+    text-decoration: none;
 
+}
 .btn{
     display: inline-block;
     padding: 10px 20px;
     border: 1px solid var(--mainColor);
     border-radius: 5px;
-    color: var(--mainColor);
+    color: var(--black);
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    background: var(--green);
+    margin-left: 4px;
 }
 
 .btn:hover{
-    background-color: var(--mainColor);
-    color: var(--secondColor);
+    background-color: var(--black);
+    color: #fff;
 }
+
 
 @media (min-width: 768px){
     .container{

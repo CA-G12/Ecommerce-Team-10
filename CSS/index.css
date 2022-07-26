@@ -1,5 +1,99 @@
 /* header style  */
 
+header .header-top {
+    background: #fff;
+    padding: 1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .header-top .logo {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+header .header-top .logo span {
+    color: var(--green);
+}
+
+header .header-top .social-media {
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+header .header-top .social-media i {
+    padding: 8px;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+
+}
+header .header-top .social-media i:hover{
+    background: var(--green);
+    border: none;
+    color: #fff;
+}
+.head-icons {
+    display: flex;
+    align-items: center;
+}
+
+.head-icons .cart {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    color: var(--black);
+    cursor: pointer;
+}
+.head-icons .cart:hover {
+    color: var(--green);
+}
+
+.cart-shop {
+    position: relative;
+}
+
+span.count {
+    position: absolute;
+    top: -15px;
+    right: 0px;
+    padding: 2px 5px;
+    background: #c50000;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 11px;
+}
+
+span.count {
+    position: absolute;
+    top: -15px;
+    right: 0px;
+    padding: 2px 5px;
+    background: red;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 11px;
+}
+
+.header-nav {
+    background: var(--green);
+}
+.header-nav .navbar {
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-nav .navbar a {
+    color: #fff;
+    padding: 1.2rem;
+    font-size: 1rem;
+}
+.header-nav .navbar a:hover {
+    background: var(--dark-color);
+}
 
 /* filter style  */
 
