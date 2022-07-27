@@ -1,3 +1,4 @@
+
 window.onload = () => {
     RenderProducts();
     let usrType = localStorage.getItem('usertype')
@@ -34,10 +35,10 @@ const RenderProducts = (products) => {
                             <span>$ ${ele.price}</span>
                         </h3>
                         <div class="card-actions">
-                            <button class="btn" title="Detailis">
+                            <button class="btn details-button" title="Details" onclick = "openPopUp(${ele.id})">
                                 <i class="fa-solid fa-calendar-week"></i>
                             </button>
-                            <button onclick="" class="client btn" title="Add To Cart">
+                            <button class="client btn" title="Add To Cart" onclick = "addToCart(${ele.id})">
                                 <i class="fa-solid fa-cart-plus"></i>
                             </button>
                             <button class="seller btn" title="Edit">
@@ -56,6 +57,19 @@ const RenderProducts = (products) => {
 }
 
 
+
+// //Then repeat this process for : Images, price, title, and description
+
+
+
+
+plusOneBtn.addEventListener('click', plusOne); 
+minusOneBtn.addEventListener('click', minusOne); 
+xButton.addEventListener('click', closePopUp); 
+
+
+
+quantitySpan.textContent = quantityBase;
 const RemoveProduct = (id) => {
     let data = getAllProducts()
     let idx = data.findIndex((e) => {

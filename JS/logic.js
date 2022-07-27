@@ -1,4 +1,18 @@
 const header = document.querySelector('header .header-nav');
+let plusOneBtn = document.querySelector('.PlusOne');
+let minusOneBtn = document.querySelector('.MinusOne');
+let quantitySpan = document.getElementById('quantitySpan');
+let smallImages = document.querySelectorAll('.product-small-image');
+let mainImage = document.querySelector('.product-image');
+let mainDiv = document.querySelector('.product-popup');
+let xButton = document.querySelector('.x');
+let priceSpan = document.querySelector('.price');
+let quantityBase = 1; 
+let descriptionSpan = document.querySelector('.description');
+let titleSpan = document.querySelector('.product-title');
+let countSpan = document.querySelector('.countSpan')
+
+const ArrayofCartObjects = [];
 
 window.onscroll = () => {
     if (window.scrollY > 70) header.classList.add('active')
@@ -37,12 +51,61 @@ const updateProduct = () => {
 
 }
 
-const addToCart = () => {
+// const addToCart = () => {
+
+// }
+
+
+
+// Details Function
+
+function plusOne() {
+    if (quantityBase >= 0) {
+        quantityBase = quantityBase + 1;
+        quantitySpan.textContent = quantityBase;
+    
+    }}
+
+function minusOne() {
+    if (quantityBase > 1 ) {
+        quantityBase = quantityBase - 1;
+        quantitySpan.textContent = quantityBase;    
+    }
+}
+
+function addToCart() {
+    let currentItem = getAllProducts().filter(e => e.id == detailsid.value)[0];
+
+    currentItem.quantity = quantityBase;
+    ArrayofCartObjects.push(currentItem);
+    localStorage.setItem('ArrayofCartObjects', JSON.stringify(ArrayofCartObjects));
 
 }
 
+// A code to simulate having different images.
 
 
+function closePopUp() {
+    mainDiv.style.display = 'none';
+}
+
+function openPopUp(id) {
+    mainDiv.style.display = 'block';
+
+    let currentItem = getAllProducts().filter((e) => {
+        return e.id === id
+    })[0];
+
+    detailsid.value = id;
+
+    mainImage.src = currentItem.image;
+    priceSpan.textContent = currentItem.price
+    descriptionSpan.textContent = currentItem.description
+    titleSpan.textContent = currentItem.title
+    smallImages.forEach((i) => {
+        i.src = currentItem.image
+    });
+}
 
 
 
