@@ -1,4 +1,20 @@
 
+const header = document.querySelector('header .header-nav');
+let plusOneBtn = document.querySelector('.PlusOne');
+let minusOneBtn = document.querySelector('.MinusOne');
+let quantitySpan = document.getElementById('quantitySpan');
+let smallImages = document.querySelectorAll('.product-small-image');
+let mainImage = document.querySelector('.product-image');
+let mainDiv = document.querySelector('.product-popup');
+let xButton = document.querySelector('.x');
+let priceSpan = document.querySelector('.price');
+let quantityBase = 1;
+let descriptionSpan = document.querySelector('.description');
+let titleSpan = document.querySelector('.product-title');
+let countSpan = document.querySelector('.countSpan')
+const ArrayofCartObjects = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]');
+
+// Window Events 
 window.onscroll = () => {
     if (window.scrollY > 70) header.classList.add('active')
     else header.classList.remove('active')
@@ -7,8 +23,6 @@ window.onscroll = () => {
 window.onload = () => {
     if (window.scrollY > 70) header.classList.add('active')
     else header.classList.remove('active')
-}
-window.onload = () => {
     RenderProducts();
     let usrType = localStorage.getItem('usertype')
     if (usrType == null) {
@@ -24,11 +38,16 @@ window.onload = () => {
         document.querySelectorAll(`.seller`).forEach(e => e.style.display = 'inline-block')
         document.querySelectorAll(`.client`).forEach(e => e.style.display = 'none')
     }
-    // SetFilterOptions()
 }
 
+// Page Settings
+const ChangeType = (type) => {
+    localStorage.setItem('usertype', type);
+    window.location.reload()
+}
 
-const RenderProducts = (products) => {
+// Products Rendering 
+function RenderProducts(products) {
     let data = products || getAllProducts();
     let allStr = ''
     data.forEach(ele => {
@@ -49,7 +68,7 @@ const RenderProducts = (products) => {
                             </button>
                             <button class="client btn" title="Add To Cart" onclick = "addToCart(${ele.id})">
                                 <i class="fa-solid fa-cart-plus"></i>
-                            </button>
+                                </button>
                             <button class="seller btn" title="Add A Product">
                             <i class="fa-solid fa-plus"></i>
                             <button onClick=(RemoveProduct(${ele.id})) class="seller btn" title="Remove">
@@ -60,41 +79,86 @@ const RenderProducts = (products) => {
                 </div>
         `
     });
-    console.log(data)
     document.querySelector('#productsList .row').innerHTML = allStr
 }
 
-
-
-// //Then repeat this process for : Images, price, title, and description
-
-
-
-
-plusOneBtn.addEventListener('click', plusOne); 
-minusOneBtn.addEventListener('click', minusOne); 
-xButton.addEventListener('click', closePopUp); 
-
-
-
-quantitySpan.textContent = quantityBase;
-const RemoveProduct = (id) => {
+function RemoveProduct(id) {
     let data = getAllProducts()
-    let idx = data.findIndex((e) => {
-        if (e.id == id)
-            return true;
-    });
-
-    if (idx == -1 || !confirm('Are You Sure To Delete This Item?')) return;
-    data.splice(idx, 1);
-    localStorage.setItem('products', JSON.stringify(data))
+    if (!confirm('Are You Sure To Delete This Item?')) return;
+    let newData = DeleteProduct(data, id);
+    if (!newData) return;
+    localStorage.setItem('products', JSON.stringify(newData))
     document.querySelector(`#prod${id}`).style.display = 'none'
 }
 
-const ChangeType = (type) => {
-    localStorage.setItem('usertype', type);
-    window.location.reload()
+// Pop Up Cart Details 
+function plusOne() {
+    if (quantityBase >= 0) {
+        quantityBase = quantityBase + 1;
+        quantitySpan.textContent = quantityBase;
+
+    }
 }
 
+function minusOne() {
+    if (quantityBase > 1) {
+        quantityBase = quantityBase - 1;
+        quantitySpan.textContent = quantityBase;
+    }
+}
+
+function closePopUp() {
+    mainDiv.style.display = 'none';
+}
+
+function openPopUp(id) {
+    mainDiv.style.display = 'block';
+
+    let currentItem = getAllProducts().filter((e) => {
+        return e.id === id
+    })[0];
+
+    detailsid.value = id;
+
+    mainImage.src = currentItem.image;
+    priceSpan.textContent = currentItem.price
+    descriptionSpan.textContent = currentItem.description
+    titleSpan.textContent = currentItem.title
+    smallImages.forEach((i) => {
+        i.src = currentItem.image
+    });
+}
+
+plusOneBtn.addEventListener('click', plusOne);
+minusOneBtn.addEventListener('click', minusOne);
+xButton.addEventListener('click', closePopUp);
+quantitySpan.textContent = quantityBase;
+
+
+
+function CartPage() {
+    window.location.href = './cart.html'
+}
+
+
+function addProduct() {
+    let frameElement = document.querySelector('form').elements;
+    let obj = {
+        id: Date.now(),
+        title: frameElement.title.value,
+        description: frameElement.description.value,
+        price: frameElement.price.value,
+        category: frameElement.cars.value,
+        image: frameElement.image.value,
+    }
+    let newarr = AddToArray(getAllProducts(), obj)
+    localStorage.setItem('products', JSON.stringify(newarr))
+    RenderProducts(newarr)
+}
+document.querySelector('form').onsubmit = (e) => {
+    addProduct()
+    e.target.reset()
+    e.preventDefault()
+}
 
 

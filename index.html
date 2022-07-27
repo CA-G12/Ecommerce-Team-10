@@ -46,7 +46,7 @@
                     Seller
                     <i class="ri-user-2-fill"></i>
                 </button>
-                <div class="cart-shop" onclick = "CartPage()">
+                <div class="cart-shop" onclick="CartPage()">
                     <i class="ri-shopping-cart-fill cart"></i>
                     <span class="count" id="countSpan">5</span>
                 </div>
@@ -93,32 +93,32 @@
     </section>
 
     <div class="product-form seller">
-            <form>
-                <label for="productName">Product Name</label>
-                <input type="text" id="product-name" required placeholder="Product Name" />
-            
-                <label for="category">Category</label>
-                <select name="cars" id="category">
-                    <option value="Computer">TVs</option>
-                    <option value="Tablet">Smart Phone</option>
-                    <option value="Mobile">Laptops</option>
-                </select>
-                <label for="description">Description</label>
-                <textarea name="description" id="description" required placeholder="Description"></textarea>
-                <!-- <input type="text" id="description" required placeholder="Description" /> -->
-            
-                <label for="imgLink">Image Link</label>
-                <input type="text" id="img-link" required placeholder="Image Link" />
-            
-                <label for="price">Price</label>
-                <input type="text" id="price" required placeholder="Price" />
-            
-                <div class="formBtns">
-                    <button class="submit" type="submit">Submit</button>
-                    <button class="reset" type="reset">Reset</button>
-                </div>
-            </form>
-        </div>
+        <form>
+            <label for="productName">Product Name</label>
+            <input type="text" id="product-name" name="title" required placeholder="Product Name" />
+
+            <label for="category">Category</label>
+            <select name="cars" id="category">
+                <option value="Computer">TVs</option>
+                <option value="Tablet">Smart Phone</option>
+                <option value="Mobile">Laptops</option>
+            </select>
+            <label for="description">Description</label>
+            <textarea name="description" id="description" required placeholder="Description"></textarea>
+            <!-- <input type="text" id="description" required placeholder="Description" /> -->
+
+            <label for="imgLink">Image Link</label>
+            <input name="image" type="text" id="img-link" required placeholder="Image Link" />
+
+            <label for="price">Price</label>
+            <input type="text" id="price" name="price" required placeholder="Price" />
+
+            <div class="formBtns">
+                <button class="submit" type="submit">Submit</button>
+                <button class="reset" type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
 
     <section class="about">
         <img src="https://media.istockphoto.com/photos/young-multicultural-couple-looking-for-new-smart-phone-to-buy-woman-picture-id1068874642?b=1&k=20&m=1068874642&s=170667a&w=0&h=h9QQVLsFG5AvacGgJnszeiNRNQwLaIFUw_w9gg_kuT4="
@@ -196,45 +196,43 @@
 
     <div class="product-popup">
         <div class="product-details">
-            <div class="image-div">          
+            <div class="image-div">
                 <img src="" alt="" class="product-image">
                 <div class="small-images">
                     <img src="" alt="" class="product-small-image">
                     <img src="" alt="" class="product-small-image">
-                    <img src="" alt="" class="product-small-image">    
+                    <img src="" alt="" class="product-small-image">
                 </div>
             </div>
             <div class="details">
                 <h1 class="product-title">Stylish Blue Jeans Jacket and Shirt</h1>
-                 <div class="stars">
+                <div class="stars">
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
-                 </div>
-                 <p class="stars-description">5.0 out of 1258 Reviews</p>
-                 <p class="price">$130</p>
-                 <p class="quantity">Quantity: &nbsp;&nbsp;<button class="PlusOne mini-btns">+</button> &nbsp; <span id="quantitySpan"></span> &nbsp; <button class="MinusOne mini-btns">-</button></p>
-                 
-                 <input type="hidden" value="" id="detailsid">
-                <button class="addToCart" onclick = "addToCart()">ADD TO CART</button>
-                    
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat illum sunt magnam sed, laborum numquam amet eveniet? Qui accusamus saepe, harum molestiae distinctio quo eos officiis odio, illum a mollitia!</p> 
+                </div>
+                <p class="stars-description">5.0 out of 1258 Reviews</p>
+                <p class="price">$130</p>
+                <p class="quantity">Quantity: &nbsp;&nbsp;<button class="PlusOne mini-btns">+</button> &nbsp; <span
+                        id="quantitySpan"></span> &nbsp; <button class="MinusOne mini-btns">-</button></p>
+
+                <input type="hidden" value="" id="detailsid">
+                <button class="addToCart" onclick="addToCart()">ADD TO CART</button>
+
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat illum sunt magnam
+                    sed, laborum numquam amet eveniet? Qui accusamus saepe, harum molestiae distinctio quo eos officiis
+                    odio, illum a mollitia!</p>
             </div>
         </div>
         <div class="x"><span class="x-span">×</span></div>
     </div>
 
 
-<<<<<<< HEAD
-    <script src="/JS/logic.js"></script>
-    <script src="/JS/dom.js"></script>
-    <script src="./JS/main.test.js"></script>
-=======
     <script src="./JS/logic.js"></script>
     <script src="./JS/dom.js"></script>
->>>>>>> 4592b68aeab333f6b009ad55a88d3ac23e262dcf
+    <script src="./JS/removeItem.js"></script>
 </body>
 
 </html>
