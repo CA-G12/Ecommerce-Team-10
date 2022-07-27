@@ -230,6 +230,7 @@ select::backdrop {
 
 /* Product Form */
 .product-form form {
+  display: none;
   max-width: 700px;
   padding: 30px;
   margin: 0 auto;
@@ -266,7 +267,7 @@ textarea {
 }
 .submit {
   margin-top: 40px;
-  background: crimson;
+  background: var(--green);
   color: white;
   padding: 8px;
   border: 0;
@@ -277,15 +278,15 @@ textarea {
 }
 
 .reset {
-  background: white;
-  color: crimson;
+  background: #fff;
+  color: var(--green);
   padding: 6px;
   border: 1;
   font-size: 1.2em;
   cursor: pointer;
   border-radius: 6px;
   margin-bottom: 20px;
-  border-color: crimson;
+  border-color: var(--green);
 }
 
 
