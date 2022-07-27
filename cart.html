@@ -6,10 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- title page -->
-    <title>iStore - Home</title>
+    <title>iStore - Cart</title>
     <!-- css links -->
     <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/488px-Apple_logo_black.svg.png" type="image/x-icon">
-
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
     <!-- remix icon library -->
@@ -74,33 +73,52 @@
         </div>
     </header>
 
-    <section>
-        // Filter
-    </section>
+    <section class="cart">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
 
-    <section>
-        // Products
-    </section>
+            <tbody>
+                <tr>
+                    <td><a href="#"><i class="ri-delete-bin-2-fill"></i></a></td>
+                    <td><img src="https://images.unsplash.com/photo-1506777775294-c79f090bac1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZHVjdCUyMGlwaG9uZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="product"></td>
+                    <td>iphone 8+</td>
+                    <td>$118.19</td>
+                    <td><input type="number" value="1"></td>
+                    <td>$118.19</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <section class="about">
-        <img src="https://media.istockphoto.com/photos/young-multicultural-couple-looking-for-new-smart-phone-to-buy-woman-picture-id1068874642?b=1&k=20&m=1068874642&s=170667a&w=0&h=h9QQVLsFG5AvacGgJnszeiNRNQwLaIFUw_w9gg_kuT4=" alt="about">
-        <div class="about-content">
-            <h2>Who We Are?</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa cupiditate debitis itaque tempore facere quas deserunt dolorem earum, alias sint quaerat, nobis, repellendus consequuntur animi? Molestias, in. Eum, ipsum natus?
-            </p>
+        <div class="total-cart">
+            <h3>Cart Total</h3>
+            <table>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td>$ 335</td>
+                </tr>
 
-            <marquee scrollAmount="4" bgColor="#ddd" loop="-1" width="100%">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores quos tenetur, quisquam libero in deleniti sapiente? Ratione sapiente eum odio aliquid reprehenderit aperiam quae!
-            </marquee>
-        </div>
-    </section>
-
-    <section class="banner">
-        <div class="overlay">
-            <h4>Repair Services</h4>
-            <h2>Up to <span>30% off</span> All Mobile % tablet</h2>
-            <button class="btn">Explore More</button>
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>$350</strong></td>
+                </tr>
+            </table>
+            <div class="buttons">
+                <button class="btn">Checkout</button>
+                <button class="btn">Clear All</button>
+            </div>
         </div>
     </section>
 
