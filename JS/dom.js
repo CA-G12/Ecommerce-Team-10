@@ -1,5 +1,20 @@
 window.onload = () => {
-    RenderProducts()
+    RenderProducts();
+    let usrType = localStorage.getItem('usertype')
+    if (usrType == null) {
+        localStorage.setItem('usertype', 'client')
+        usrType = 'client'
+    }
+    // userTypeSwitcher.value = usrType
+    if (usrType == 'client') {
+        document.querySelectorAll(`.client`).forEach(e => e.style.display = 'inline-block')
+        document.querySelectorAll(`.seller`).forEach(e => e.style.display = 'none')
+    }
+    else if (usrType == 'seller') {
+        document.querySelectorAll(`.seller`).forEach(e => e.style.display = 'inline-block')
+        document.querySelectorAll(`.client`).forEach(e => e.style.display = 'none')
+    }
+    // SetFilterOptions()
 }
 
 
@@ -15,7 +30,7 @@ const RenderProducts = (products) => {
                     </div>
                     <div class="card-body">
                         <h3 class="card-details">
-                            <span>${ele.title.substring(0, Math.min(20, ele.title.length))} ...</span>
+                            <span>${ele.title.substring(0, Math.min(15, ele.title.length))} ...</span>
                             <span>$ ${ele.price}</span>
                         </h3>
                         <div class="card-actions">
@@ -39,3 +54,9 @@ const RenderProducts = (products) => {
     console.log(data)
     document.querySelector('#productsList .row').innerHTML = allStr
 }
+
+const ChangeType = (type) => {
+    localStorage.setItem('usertype', type);
+    window.location.reload()
+}
+
