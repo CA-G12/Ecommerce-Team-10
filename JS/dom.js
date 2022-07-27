@@ -55,7 +55,7 @@ function RenderProducts(products) {
         <div class="card" id="prod${ele.id}">
                     <div class="card-header">
                         <img src="${ele.image}"
-                            alt="">
+                            alt="" class="imageCard">
                     </div>
                     <div class="card-body">
                         <h3 class="card-details">
@@ -121,7 +121,7 @@ function openPopUp(id) {
     detailsid.value = id;
 
     mainImage.src = currentItem.image;
-    priceSpan.textContent = currentItem.price
+    priceSpan.textContent = "$" + currentItem.price
     descriptionSpan.textContent = currentItem.description
     titleSpan.textContent = currentItem.title
     smallImages.forEach((i) => {

@@ -12,10 +12,17 @@ header .header-top .logo {
     font-size: 2rem;
     font-weight: bolder;
     color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header .header-top .logo span {
     color: var(--green);
+}
+
+.ri-apple-fill {
+    margin-bottom: 7px;
 }
 
 header .header-top .social-media {
@@ -27,14 +34,13 @@ header .header-top .social-media {
 
 header .header-top .social-media i {
     padding: 8px;
-    border: 1px solid var(--black);
+    border: none;
     border-radius: 50%;
 
 }
 
 header .header-top .social-media i:hover {
     background: var(--green);
-    border: none;
     color: #fff;
 }
 
@@ -570,7 +576,7 @@ textarea {
     max-width: 80%;
     height: 75vh;
     margin-top: 25px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .details {
@@ -595,7 +601,7 @@ textarea {
     width: 50px;
     height: 50px;
     margin-top: 10px;
-    object-fit: cover;
+    object-fit: contain;
 
 }
 
@@ -615,6 +621,8 @@ textarea {
 
 .product-title {
     margin-bottom: 30px;
+    color: var(--green);
+
 }
 
 .price {
@@ -666,13 +674,17 @@ textarea {
 }
 
 .x:hover {
-    background-color: #1D1C1C;
+    background-color: var(--green);
     color: white;
 }
 
 .x-span {
     text-align: center;
     font-size: 25px;
+}
+
+.imageCard {
+    object-fit: contain!important;
 }
 
 /* media query responsive */
