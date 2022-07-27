@@ -470,6 +470,147 @@ select::backdrop {
     color: var(--green);
 }
 
+/* POP UP CSS */
+
+.product-popup {
+    display: none;
+    width: 90%;
+    height: 90vh;
+    background-color: white;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    box-shadow: var(--box-shadow);
+    
+}
+
+.product-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.image-div {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image {
+    max-width: 80%;
+    height: 75vh;
+    margin-top: 25px;
+    object-fit: cover;
+}
+
+.details {
+    width: 60%;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.details h1{
+    font-weight: 600;
+}
+
+.checked {
+    color: orange;
+    font-size: 20px !important;
+}
+
+.product-small-image {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    object-fit: cover;
+
+}
+
+.product-small-image:not(:last-child) {
+    margin-right: 8px;
+}
+
+.product-small-image:hover {
+    cursor: pointer;
+}
+
+.stars-description {
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 13px;
+}
+
+.product-title {
+    margin-bottom: 30px;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.quantity {
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.addToCart {
+    all: unset;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    box-shadow: 0 0 1px black;
+    background-color:#1D1C1C;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.description {
+    width: 95%;
+}
+
+.mini-btns {
+    all: unset;
+    cursor: pointer;
+}
+
+.x {
+    position: absolute;
+    right: 1%;
+    top: .5%;
+    width: 35px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.x:hover {
+    background-color: #1D1C1C;
+    color: white;
+}
+
+.x-span {
+    text-align: center;
+    font-size: 25px;
+}
+
 /* media query responsive */
 @media (max-width: 991px) {
     html {

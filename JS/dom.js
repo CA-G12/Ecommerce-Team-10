@@ -1,3 +1,4 @@
+
 window.onload = () => {
     RenderProducts()
 }
@@ -19,7 +20,7 @@ const RenderProducts = (products) => {
                             <span>$ ${ele.price}</span>
                         </h3>
                         <div class="card-actions">
-                            <button class="btn" title="Detailis">
+                            <button class="btn details-button" title="Details" onclick = "openPopUp(${ele.id})">
                                 <i class="fa-solid fa-calendar-week"></i>
                             </button>
                             <button onclick="" class="client btn" title="Add To Cart">
@@ -39,3 +40,20 @@ const RenderProducts = (products) => {
     console.log(data)
     document.querySelector('#productsList .row').innerHTML = allStr
 }
+
+
+
+// //Then repeat this process for : Images, price, title, and description
+
+
+
+
+const ArrayofCartObjects = [];
+
+plusOneBtn.addEventListener('click', plusOne); 
+minusOneBtn.addEventListener('click', minusOne); 
+xButton.addEventListener('click', closePopUp); 
+
+
+
+quantitySpan.textContent = quantityBase;
