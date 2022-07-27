@@ -19,9 +19,15 @@ const DeleteProduct = (data, id) => {
     data.splice(idx, 1);
     return data;
 }
-
+function AddToArray(array , obj){
+    if(!array) array = []
+    array.push(obj)
+    return array
+}
 if (typeof module !== "undefined") {
     module.exports = {
-        removeInCart
+        removeInCart,
+        DeleteProduct,
+        AddToArray,
     }
 }
