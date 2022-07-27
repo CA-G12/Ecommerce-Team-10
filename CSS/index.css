@@ -200,6 +200,38 @@ nav.navbar.navbar-bottom {
     padding-top: 15px;
 }
 
+.total-cart {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 30px;
+    border: 1px solid #e2e9e1;
+    padding: 30px;
+    margin-top: 30px;
+}
+.total-cart table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.total-cart table td {
+    width: 50%;
+    border: 1px solid #e2e9e1;
+    padding: 10px;
+    font-size: 13px;
+}
+.total-cart h3 {
+    padding-bottom: 13px;
+}
+.total-cart .buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+
+
 /* footer style  */
 .footer {
     padding: 1.5rem 9%;
