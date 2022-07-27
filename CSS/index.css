@@ -250,8 +250,8 @@ select::backdrop {
 .product-form input,
 select {
   display: block;
-  width: 100%;
-  margin: 10px 0;
+  width: 50%;
+  margin: 10px auto;
   padding: 8px;
   border: 1px solid black;
 }
@@ -685,6 +685,16 @@ textarea {
 
 .imageCard {
     object-fit: contain!important;
+}
+
+#searches {
+    margin: 0 auto;
+    margin-left: 40%;
+}
+
+#searches2 {
+    margin-left: 40%;
+
 }
 
 /* media query responsive */
