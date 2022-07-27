@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 
 window.onscroll = () => {
     if (window.scrollY > 70) header.classList.add('active')
@@ -10,38 +8,31 @@ window.onload = () => {
     if (window.scrollY > 70) header.classList.add('active')
     else header.classList.remove('active')
 }
->>>>>>> 6321cd59aeab72702da3538bfcafe3605c2d2ec2
 window.onload = () => {
-  RenderProducts();
-  let usrType = localStorage.getItem('usertype');
-  if (usrType == null) {
-    localStorage.setItem('usertype', 'client');
-    usrType = 'client';
-  }
-  // userTypeSwitcher.value = usrType
-  if (usrType == 'client') {
-    document
-      .querySelectorAll(`.client`)
-      .forEach((e) => (e.style.display = 'inline-block'));
-    document
-      .querySelectorAll(`.seller`)
-      .forEach((e) => (e.style.display = 'none'));
-  } else if (usrType == 'seller') {
-    document
-      .querySelectorAll(`.seller`)
-      .forEach((e) => (e.style.display = 'inline-block'));
-    document
-      .querySelectorAll(`.client`)
-      .forEach((e) => (e.style.display = 'none'));
-  }
-  // SetFilterOptions()
-};
+    RenderProducts();
+    let usrType = localStorage.getItem('usertype')
+    if (usrType == null) {
+        localStorage.setItem('usertype', 'client')
+        usrType = 'client'
+    }
+    // userTypeSwitcher.value = usrType
+    if (usrType == 'client') {
+        document.querySelectorAll(`.client`).forEach(e => e.style.display = 'inline-block')
+        document.querySelectorAll(`.seller`).forEach(e => e.style.display = 'none')
+    }
+    else if (usrType == 'seller') {
+        document.querySelectorAll(`.seller`).forEach(e => e.style.display = 'inline-block')
+        document.querySelectorAll(`.client`).forEach(e => e.style.display = 'none')
+    }
+    // SetFilterOptions()
+}
+
 
 const RenderProducts = (products) => {
-  let data = products || getAllProducts();
-  let allStr = '';
-  data.forEach((ele) => {
-    allStr += `
+    let data = products || getAllProducts();
+    let allStr = ''
+    data.forEach(ele => {
+        allStr += `
         <div class="card" id="prod${ele.id}">
                     <div class="card-header">
                         <img src="${ele.image}"
@@ -49,21 +40,14 @@ const RenderProducts = (products) => {
                     </div>
                     <div class="card-body">
                         <h3 class="card-details">
-                            <span>${ele.title.substring(
-                              0,
-                              Math.min(15, ele.title.length)
-                            )} ...</span>
+                            <span>${ele.title.substring(0, Math.min(15, ele.title.length))} ...</span>
                             <span>$ ${ele.price}</span>
                         </h3>
                         <div class="card-actions">
-                            <button class="btn details-button" title="Details" onclick = "openPopUp(${
-                              ele.id
-                            })">
+                            <button class="btn details-button" title="Details" onclick = "openPopUp(${ele.id})">
                                 <i class="fa-solid fa-calendar-week"></i>
                             </button>
-                            <button class="client btn" title="Add To Cart" onclick = "addToCart(${
-                              ele.id
-                            })">
+                            <button class="client btn" title="Add To Cart" onclick = "addToCart(${ele.id})">
                                 <i class="fa-solid fa-cart-plus"></i>
                             </button>
                             <button class="seller btn" title="Add A Product">
@@ -74,50 +58,43 @@ const RenderProducts = (products) => {
                         </div>
                     </div>
                 </div>
-        `;
-  });
-  console.log(data);
-  document.querySelector('#productsList .row').innerHTML = allStr;
-};
+        `
+    });
+    console.log(data)
+    document.querySelector('#productsList .row').innerHTML = allStr
+}
 
-//Then repeat this process for : Images, price, title, and description
 
-plusOneBtn.addEventListener('click', plusOne);
-minusOneBtn.addEventListener('click', minusOne);
-xButton.addEventListener('click', closePopUp);
+
+// //Then repeat this process for : Images, price, title, and description
+
+
+
+
+plusOneBtn.addEventListener('click', plusOne); 
+minusOneBtn.addEventListener('click', minusOne); 
+xButton.addEventListener('click', closePopUp); 
+
+
 
 quantitySpan.textContent = quantityBase;
 const RemoveProduct = (id) => {
-  let data = getAllProducts();
-  let idx = data.findIndex((e) => {
-    if (e.id == id) return true;
-  });
+    let data = getAllProducts()
+    let idx = data.findIndex((e) => {
+        if (e.id == id)
+            return true;
+    });
 
-  if (idx == -1 || !confirm('Are You Sure To Delete This Item?')) return;
-  data.splice(idx, 1);
-  localStorage.setItem('products', JSON.stringify(data));
-  document.querySelector(`#prod${id}`).style.display = 'none';
-};
+    if (idx == -1 || !confirm('Are You Sure To Delete This Item?')) return;
+    data.splice(idx, 1);
+    localStorage.setItem('products', JSON.stringify(data))
+    document.querySelector(`#prod${id}`).style.display = 'none'
+}
 
 const ChangeType = (type) => {
-  localStorage.setItem('usertype', type);
-  window.location.reload();
-};
-
-
-//! ========================= ADD PRODUCT =========================
-
-function AddToDom() {
-  let productObject = {};
-  productObject.id = id++;
-  productObject.title = title.value;
-  productObject.category = category.value;
-  productObject.description = description.value;
-  productObject.price = price.value;
-  productObject.image = image.value;
-  productObject.quantity = 1;
-
-  let newArray = AddToArray(getAllProducts(), productObject);
-  localStorage.setItem('products', json.stringify(newArray));
-  renderProducts(newArray);
+    localStorage.setItem('usertype', type);
+    window.location.reload()
 }
+
+
+
