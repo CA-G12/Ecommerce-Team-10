@@ -99,8 +99,3 @@ const rendertempdata = () => {
 }
 
 rendertempdata();
-
-function AddToArray(array , obj){
-    array.push(obj)
-    return array
-}
