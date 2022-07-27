@@ -69,11 +69,13 @@ span.count {
     position: absolute;
     top: -15px;
     right: 0px;
-    padding: 2px 5px;
     background: red;
     border-radius: 50%;
     color: #fff;
     font-size: 11px;
+    width: 16px;
+    height: 16px;
+    text-align: center;
 }
 
 .header-nav {
@@ -94,6 +96,17 @@ span.count {
 .header-nav .navbar a:hover {
     background: var(--dark-color);
 }
+nav.navbar.navbar-bottom {
+    background: var(--green);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10000;
+    display: none;
+}
+
+
 
 /* filter style  */
 
@@ -108,3 +121,43 @@ span.count {
 
 
 /* footer style  */
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    .header-top {
+        padding: 2rem;
+    }
+    .social-media {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .btn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    .header-nav {
+        font-size: 50%;
+        position: relative;
+    }
+    .header-nav .navbar {
+        display: none;
+    }
+    nav.navbar.navbar-bottom {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 10000;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
