@@ -1,14 +1,14 @@
 
 <br />
 <div align="center">
-  <a href="#live-link">
+  <a href="https://ca-g12.github.io/Ecommerce-Team-10/">
     <img src="https://i.imgur.com/Uylc61Z.png" alt="Logo">
   </a>
 </div>
 
 
 ## **Live Website** :tv: <span id="live"></span>
-You can check the website [**iStore**](https://gsg-cf05.github.io/CryptocurrencySite/).
+You can check the website [**iStore**](https://ca-g12.github.io/Ecommerce-Team-10/).
 
 
 ## **About Our E-Commerce Website** <span id="about"></span>
@@ -28,7 +28,7 @@ E-commerce is the new form of shopping and is the most common in recent years. I
 _Planning Phase_:
 
 - We have came with the idea of the website through our work with Gaza Sky Geeks.
-- Sitemap consisted of 2 pages: Landing page and Cart Page.
+- Sitemap consisted of 2 pages: Landing Page and Cart Page.
 - We assessed the tasks we needed to accomplish as well as our skillsets.
 - And finally we divided up the workload accordingly.
 
@@ -72,7 +72,7 @@ As a **Seller**, I can :
 
 # **Team members** 
 
-1. [Mai Elhajeen]()
+1. [Mai Elhajeen](https://github.com/Mai-Elhajeen)
 1. [Mohammed Jaber](https://github.com/mohjaps)
 1. [Abdallah Alshawaf](https://github.com/abdallah-alshawaf)
 1. [Ali Shbair](https://github.com/ShbairAli)
