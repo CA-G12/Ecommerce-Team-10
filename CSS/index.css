@@ -229,7 +229,64 @@ select::backdrop {
 /* addproduct style  */
 
 /* Product Form */
+.product-form form {
+  max-width: 700px;
+  padding: 30px;
+  margin: 0 auto;
+  background-color: var(--mainColor);
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
 
+.product-form input,
+select {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+}
+
+.product-form label {
+  display: block;
+  margin-top: 24px;
+}
+
+textarea {
+  padding: 7px;
+  height: 90px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.product-form .formBtns {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px 0;
+}
+.submit {
+  margin-top: 40px;
+  background: crimson;
+  color: white;
+  padding: 8px;
+  border: 0;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.reset {
+  background: white;
+  color: crimson;
+  padding: 6px;
+  border: 1;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border-color: crimson;
+}
 
 
 /* about style  */
