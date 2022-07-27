@@ -16,7 +16,6 @@ You can check the website [**iStore**](https://gsg-cf05.github.io/Cryptocurrency
 
 
 **What?**
- ...
 
 This is an e-commerce website that sells Apple Products. It provides an easy-to-use user interface, along with a design that maximizes the user experience quality. The website is also equipped with an efficient functionality that performs fast processes.
 
@@ -51,7 +50,7 @@ As a **Buyer**, I can :
 * see all of the items available on the store
 * search for item on the store by the name
 * filter items by the price or by category
-* add item to my Cart
+* add item to my cart
 * see the items inside my cart
 * delete any items inside my cart
 
@@ -77,6 +76,4 @@ As a **Seller**, I can :
 1. [Mohammed Jaber](https://github.com/mohjaps)
 1. [Abdallah Alshawaf](https://github.com/abdallah-alshawaf)
 1. [Ali Shbair](https://github.com/ShbairAli)
-
-
 
