@@ -50,9 +50,8 @@ const RenderProducts = (products) => {
                             <button class="client btn" title="Add To Cart" onclick = "addToCart(${ele.id})">
                                 <i class="fa-solid fa-cart-plus"></i>
                             </button>
-                            <button class="seller btn" title="Edit">
-                                <i class="fa-solid fa-message-pen"></i>
-                            </button>
+                            <button class="seller btn" title="Add A Product">
+                            <i class="fa-solid fa-plus"></i>
                             <button onClick=(RemoveProduct(${ele.id})) class="seller btn" title="Remove">
                                 <i class="fa-solid fa-calendar-xmark"></i>
                             </button>

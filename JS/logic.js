@@ -299,3 +299,9 @@ if(typeof module !== "undefined"){
         removeInCart
     }
 }
+function CartPage() {
+    window.location.href = './cart.html'
+}
+
+getCArtItems();
+//displayInCart()
