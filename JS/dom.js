@@ -1,6 +1,21 @@
 
 window.onload = () => {
-    RenderProducts()
+    RenderProducts();
+    let usrType = localStorage.getItem('usertype')
+    if (usrType == null) {
+        localStorage.setItem('usertype', 'client')
+        usrType = 'client'
+    }
+    // userTypeSwitcher.value = usrType
+    if (usrType == 'client') {
+        document.querySelectorAll(`.client`).forEach(e => e.style.display = 'inline-block')
+        document.querySelectorAll(`.seller`).forEach(e => e.style.display = 'none')
+    }
+    else if (usrType == 'seller') {
+        document.querySelectorAll(`.seller`).forEach(e => e.style.display = 'inline-block')
+        document.querySelectorAll(`.client`).forEach(e => e.style.display = 'none')
+    }
+    // SetFilterOptions()
 }
 
 
@@ -16,7 +31,7 @@ const RenderProducts = (products) => {
                     </div>
                     <div class="card-body">
                         <h3 class="card-details">
-                            <span>${ele.title.substring(0, Math.min(20, ele.title.length))} ...</span>
+                            <span>${ele.title.substring(0, Math.min(15, ele.title.length))} ...</span>
                             <span>$ ${ele.price}</span>
                         </h3>
                         <div class="card-actions">
@@ -55,3 +70,21 @@ xButton.addEventListener('click', closePopUp);
 
 
 quantitySpan.textContent = quantityBase;
+const RemoveProduct = (id) => {
+    let data = getAllProducts()
+    let idx = data.findIndex((e) => {
+        if (e.id == id)
+            return true;
+    });
+
+    if (idx == -1 || !confirm('Are You Sure To Delete This Item?')) return;
+    data.splice(idx, 1);
+    localStorage.setItem('products', JSON.stringify(data))
+    document.querySelector(`#prod${id}`).style.display = 'none'
+}
+
+const ChangeType = (type) => {
+    localStorage.setItem('usertype', type);
+    window.location.reload()
+}
+
