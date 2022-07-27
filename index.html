@@ -82,7 +82,15 @@
     </header>
 
     <section>
-        // Filter
+<label for="Search">Search:</label>
+<input oninput="filterCategory()" id='search' type="text" Search>
+<select onchange="filterCategory()" name="cars" id="filter-category">
+    <option value="" selected>All</option>
+    <option value="TVs">TVs</option>
+    <option value="Smart Phone">Smart Phone</option>
+    <option value="Laptops">Laptops</option>
+</select>
+
     </section>
 
     <section id="productsList">

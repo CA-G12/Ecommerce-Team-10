@@ -162,3 +162,9 @@ document.querySelector('form').onsubmit = (e) => {
 }
 
 
+const filterCategory = () => {
+const search = document.querySelector('#search');
+const category = document.querySelector('#filter-category');
+    const filteredData = getAllProducts(search.value, category.value);
+    RenderProducts(filteredData)
+}
