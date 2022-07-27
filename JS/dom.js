@@ -39,3 +39,17 @@ const RenderProducts = (products) => {
     console.log(data)
     document.querySelector('#productsList .row').innerHTML = allStr
 }
+
+
+const RemoveProduct = (id) => {
+    let data = getAllProducts()
+    let idx = data.findIndex((e) => {
+        if (e.id == id)
+            return true;
+    });
+
+    if (idx == -1 || !confirm('Are You Sure To Delete This Item?')) return;
+    data.splice(idx, 1);
+    localStorage.setItem('products', JSON.stringify(data))
+    document.querySelector(`#prod${id}`).style.display = 'none'
+}
