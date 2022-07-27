@@ -48,7 +48,7 @@
                 </button>
                 <div class="cart-shop">
                     <i class="ri-shopping-cart-fill cart"></i>
-                    <span class="count">5</span>
+                    <span class="count" id="countSpan">5</span>
                 </div>
             </div>
         </div>
@@ -165,6 +165,39 @@
 
         <div class="credit">Created by <span>Team 10: Ali - Mohammed - Mai - Abdullah</span> | All Rights Reserved</div>
     </footer>
+
+    <div class="product-popup">
+        <div class="product-details">
+            <div class="image-div">          
+                <img src="./download.jpg" alt="" class="product-image">
+                <div class="small-images">
+                    <img src="./download.jpg" alt="" class="product-small-image">
+                    <img src="./download.jpg" alt="" class="product-small-image">
+                    <img src="./download.jpg" alt="" class="product-small-image">    
+                </div>
+            </div>
+            <div class="details">
+                <h1 class="product-title">Stylish Blue Jeans Jacket and Shirt</h1>
+                 <div class="stars">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                 </div>
+                 <p class="stars-description">5.0 out of 1258 Reviews</p>
+                 <p class="price">$130</p>
+                 <p class="quantity">Quantity: &nbsp;&nbsp;<button class="PlusOne mini-btns">+</button> &nbsp; <span id="quantitySpan"></span> &nbsp; <button class="MinusOne mini-btns">-</button></p>
+                 
+                 <input type="hidden" value="" id="detailsid">
+                <button class="addToCart" onclick = "addToCart()">ADD TO CART</button>
+                    
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat illum sunt magnam sed, laborum numquam amet eveniet? Qui accusamus saepe, harum molestiae distinctio quo eos officiis odio, illum a mollitia!</p> 
+            </div>
+        </div>
+        <div class="x"><span class="x-span">×</span></div>
+    </div>
+
 
     <script src="/JS/logic.js"></script>
     <script src="/JS/dom.js"></script>
