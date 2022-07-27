@@ -1,4 +1,3 @@
-
 window.onload = () => {
     RenderProducts();
     let usrType = localStorage.getItem('usertype')
