@@ -34,11 +34,6 @@ const filterProducts = () => {
 }
 
 const addPrdouct = (product) => {
-
-
-
-
-
     // Add Product To localStarage
     // renderAdd();
 }
@@ -47,18 +42,9 @@ const updateProduct = () => {
 
 }
 
+// const addToCart = () => {
 
-
-
-
-//  Login file
-    function AddToProducts(array , obj){
-        array.push(obj)
-        return array
-    }
-
-
-
+// }
 
 
 
