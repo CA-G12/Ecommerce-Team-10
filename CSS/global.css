@@ -20,7 +20,7 @@
 }
 
 html{
-    overflow: hidden;
+    /* overflow: hidden; */
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
 }
