@@ -14,15 +14,6 @@ let countSpan = document.querySelector('.countSpan')
 
 const ArrayofCartObjects = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]');
 
-window.onscroll = () => {
-    if (window.scrollY > 70) header.classList.add('active')
-    else header.classList.remove('active')
-}
-
-window.onload = () => {
-    if (window.scrollY > 70) header.classList.add('active')
-    else header.classList.remove('active')
-}
 
 const getAllProducts = (search = '', category = '') => {
     let data = localStorage.getItem('products');
@@ -276,18 +267,38 @@ function displayInCart () {
     }
 }
 
-function removeInCart(id) {
-    let ArrayofCartObjects = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]');
-    let idx = ArrayofCartObjects.findIndex((e) => {
+// function removeInCart(arr, id) {
+//     let listOfArray = [{id: 1}, {id:2}]
+//     //let ArrayofCartObjects = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]');
+//     let idx = arr.findIndex((e) => {
+//         if (e.id == id)
+//             return true;
+//     });
+//     if (idx == -1 || !confirm('Are You Sure To Delete This Item?')) return;
+//     arr.splice(idx, 1);
+    
+// }
+
+function removeInCart(arr, id) {
+    // let ArrayofCartObjects = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]');
+    const myArr = [...arr];
+    let idx = myArr.findIndex((e) => {
         if (e.id == id)
             return true;
     });
     if (idx == -1 || !confirm('Are You Sure To Delete This Item?')) return;
-    ArrayofCartObjects.splice(idx, 1);
-    localStorage.setItem('ArrayofCartObjects', JSON.stringify(ArrayofCartObjects))
-    document.querySelector(`#card-item${id}`).style.display = 'none'
+    myArr.splice(idx, 1);
+    // localStorage.setItem('ArrayofCartObjects', JSON.stringify(ArrayofCartObjects))
+    // document.querySelector(`#card-item${id}`).style.display = 'none'
+
+    return myArr;
 }
 
+if(typeof module !== "undefined"){
+    module.exports = {
+        removeInCart
+    }
+}
 function CartPage() {
     window.location.href = './cart.html'
 }
