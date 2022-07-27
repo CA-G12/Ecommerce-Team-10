@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+
+window.onscroll = () => {
+    if (window.scrollY > 70) header.classList.add('active')
+    else header.classList.remove('active')
+}
+
+window.onload = () => {
+    if (window.scrollY > 70) header.classList.add('active')
+    else header.classList.remove('active')
+}
+>>>>>>> 6321cd59aeab72702da3538bfcafe3605c2d2ec2
 window.onload = () => {
   RenderProducts();
   let usrType = localStorage.getItem('usertype');
@@ -53,12 +66,9 @@ const RenderProducts = (products) => {
                             })">
                                 <i class="fa-solid fa-cart-plus"></i>
                             </button>
-                            <button class="seller btn" title="Edit">
-                                <i class="fa-solid fa-message-pen"></i>
-                            </button>
-                            <button onClick=(RemoveProduct(${
-                              ele.id
-                            })) class="seller btn" title="Remove">
+                            <button class="seller btn" title="Add A Product">
+                            <i class="fa-solid fa-plus"></i>
+                            <button onClick=(RemoveProduct(${ele.id})) class="seller btn" title="Remove">
                                 <i class="fa-solid fa-calendar-xmark"></i>
                             </button>
                         </div>

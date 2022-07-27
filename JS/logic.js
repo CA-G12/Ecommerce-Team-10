@@ -12,17 +12,8 @@ let descriptionSpan = document.querySelector('.description');
 let titleSpan = document.querySelector('.product-title');
 let countSpan = document.querySelector('.countSpan')
 
-const ArrayofCartObjects = [];
+const ArrayofCartObjects = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]');
 
-window.onscroll = () => {
-    if (window.scrollY > 70) header.classList.add('active')
-    else header.classList.remove('active')
-}
-
-window.onload = () => {
-    if (window.scrollY > 70) header.classList.add('active')
-    else header.classList.remove('active')
-}
 
 const getAllProducts = (search = '', category = '') => {
     let data = localStorage.getItem('products');
@@ -121,12 +112,6 @@ function openPopUp(id) {
     });
 }
 
-
-
-
-
-
-
 const rendertempdata = () => {
     let dta = [{
         "id": 1,
@@ -204,3 +189,133 @@ const rendertempdata = () => {
 }
 
 rendertempdata();
+
+function getCArtItems() {
+    const ArrayofCartObjects = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]');
+    console.log(ArrayofCartObjects)
+    const table = document.querySelector('#cart tbody')
+    table.innerHTML = '';
+    let txt = '';
+    ArrayofCartObjects.forEach(item => {
+        txt += `
+        <tr id='card-item${item.id}'>
+        <td><a><i class="ri-delete-bin-2-fill" onClick='removeInCart(${item.id})' ></i></a></td>
+        <td><img src="https://images.unsplash.com/photo-1506777775294-c79f090bac1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZHVjdCUyMGlwaG9uZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="product"></td>
+        <td>${item.title}</td>
+        <td>$ ${item.price}</td>
+        <td><input type="number" value="1"></td>
+        <td>$ ${item.price * 2}</td>
+    </tr>
+        `
+    })
+    table.innerHTML = txt;
+}
+
+// display in cart page
+function displayInCart () {
+
+    /*
+    
+    locatstorage => array 
+
+
+
+
+    */
+
+
+    let cartSection = document.querySelector('#cart')
+    if (cartSection) {
+        cartSection.innerHTML = ''
+
+        ArrayofCartObjects.map(item => {
+            cartSection.innerHTML = `
+                <table width="100%">
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Image</td>
+                        <td>Product</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Subtotal</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><a href="#"><i class="ri-delete-bin-2-fill"></i></a></td>
+                        <td><img src="https://images.unsplash.com/photo-1506777775294-c79f090bac1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZHVjdCUyMGlwaG9uZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="product"></td>
+                        <td>${item.name}</td>
+                        <td>$118.19</td>
+                        <td><input type="number" value="1"></td>
+                        <td>$118.19</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="total-cart">
+                <h3>Cart Total</h3>
+                <table>
+                    <tr>
+                        <td>Cart Subtotal</td>
+                        <td>$ 335</td>
+                    </tr>
+
+                    <tr>
+                        <td>Shipping</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>$350</strong></td>
+                    </tr>
+                </table>
+                <div class="buttons">
+                    <button class="btn">Checkout</button>
+                    <button class="btn">Clear All</button>
+                </div>
+            </div>
+            `
+        })
+    }
+}
+
+// function removeInCart(arr, id) {
+//     let listOfArray = [{id: 1}, {id:2}]
+//     //let ArrayofCartObjects = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]');
+//     let idx = arr.findIndex((e) => {
+//         if (e.id == id)
+//             return true;
+//     });
+//     if (idx == -1 || !confirm('Are You Sure To Delete This Item?')) return;
+//     arr.splice(idx, 1);
+    
+// }
+
+function removeInCart(arr, id) {
+    // let ArrayofCartObjects = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]');
+    const myArr = [...arr];
+    let idx = myArr.findIndex((e) => {
+        if (e.id == id)
+            return true;
+    });
+    if (idx == -1 || !confirm('Are You Sure To Delete This Item?')) return;
+    myArr.splice(idx, 1);
+    // localStorage.setItem('ArrayofCartObjects', JSON.stringify(ArrayofCartObjects))
+    // document.querySelector(`#card-item${id}`).style.display = 'none'
+
+    return myArr;
+}
+
+if(typeof module !== "undefined"){
+    module.exports = {
+        removeInCart
+    }
+}
+function CartPage() {
+    window.location.href = './cart.html'
+}
+
+getCArtItems();
+//displayInCart()
