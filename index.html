@@ -48,7 +48,7 @@
                 </button>
                 <div class="cart-shop">
                     <i class="ri-shopping-cart-fill cart"></i>
-                    <span class="count">5</span>
+                    <span class="count" id="countSpan">5</span>
                 </div>
             </div>
         </div>
@@ -189,8 +189,8 @@
                  <p class="price">$130</p>
                  <p class="quantity">Quantity: &nbsp;&nbsp;<button class="PlusOne mini-btns">+</button> &nbsp; <span id="quantitySpan"></span> &nbsp; <button class="MinusOne mini-btns">-</button></p>
                  
-             
-                <button class="addToCart">ADD TO CART</button>
+                 <input type="hidden" value="" id="detailsid">
+                <button class="addToCart" onclick = "addToCart()">ADD TO CART</button>
                     
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat illum sunt magnam sed, laborum numquam amet eveniet? Qui accusamus saepe, harum molestiae distinctio quo eos officiis odio, illum a mollitia!</p> 
             </div>

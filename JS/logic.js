@@ -10,7 +10,9 @@ let priceSpan = document.querySelector('.price');
 let quantityBase = 1; 
 let descriptionSpan = document.querySelector('.description');
 let titleSpan = document.querySelector('.product-title');
+let countSpan = document.querySelector('.countSpan')
 
+const ArrayofCartObjects = [];
 
 window.onscroll = () => {
     if (window.scrollY > 70) header.classList.add('active')
@@ -70,16 +72,15 @@ function minusOne() {
 }
 
 function addToCart() {
-    let currentItem = getAllProducts().find(e => e.id = id);
+    let currentItem = getAllProducts().filter(e => e.id == detailsid.value)[0];
 
-    currentObject.quantity = quantityBase;
+    currentItem.quantity = quantityBase;
     ArrayofCartObjects.push(currentItem);
     localStorage.setItem('ArrayofCartObjects', JSON.stringify(ArrayofCartObjects));
+
 }
 
 // A code to simulate having different images.
-
-
 
 
 function closePopUp() {
@@ -91,14 +92,16 @@ function openPopUp(id) {
 
     let currentItem = getAllProducts().filter((e) => {
         return e.id === id
-    });
+    })[0];
 
-    mainImage.src = currentItem[0].image;
-    priceSpan.textContent = currentItem[0].price
-    descriptionSpan.textContent = currentItem[0].description
-    titleSpan.textContent = currentItem[0].title
+    detailsid.value = id;
+
+    mainImage.src = currentItem.image;
+    priceSpan.textContent = currentItem.price
+    descriptionSpan.textContent = currentItem.description
+    titleSpan.textContent = currentItem.title
     smallImages.forEach((i) => {
-        i.src = currentItem[0].image
+        i.src = currentItem.image
     });
 }
 

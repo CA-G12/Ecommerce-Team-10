@@ -23,7 +23,7 @@ const RenderProducts = (products) => {
                             <button class="btn details-button" title="Details" onclick = "openPopUp(${ele.id})">
                                 <i class="fa-solid fa-calendar-week"></i>
                             </button>
-                            <button onclick="" class="client btn" title="Add To Cart">
+                            <button class="client btn" title="Add To Cart" onclick = "addToCart(${ele.id})">
                                 <i class="fa-solid fa-cart-plus"></i>
                             </button>
                             <button class="seller btn" title="Edit">
@@ -47,8 +47,6 @@ const RenderProducts = (products) => {
 
 
 
-
-const ArrayofCartObjects = [];
 
 plusOneBtn.addEventListener('click', plusOne); 
 minusOneBtn.addEventListener('click', minusOne); 
