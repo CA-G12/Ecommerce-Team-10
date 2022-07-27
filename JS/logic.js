@@ -288,5 +288,9 @@ function removeInCart(id) {
     document.querySelector(`#card-item${id}`).style.display = 'none'
 }
 
+function CartPage() {
+    window.location.href = './cart.html'
+}
+
 getCArtItems();
 //displayInCart()
