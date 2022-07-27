@@ -143,7 +143,40 @@ nav.navbar.navbar-bottom {
     padding-left: 40px;
 }
 
+/* start banner section */
+.banner {
+    background-image: url(https://media.istockphoto.com/photos/business-woman-using-mobile-smartphone-on-global-network-connection-picture-id1334575820?b=1&k=20&m=1334575820&s=170667a&w=0&h=61a4GgSiQZKVxTnyuy2N6vs-UZXwz6xXAFdog4DP0DY=);
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+}
+.banner .overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    padding: 1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
 
+}
+.banner h4 {
+    font-size: 16px;
+
+}
+.banner h2 {
+    font-size: 30px;
+    padding: 10px 0;
+}
+.banner h2 span {
+    color: #c50000;   
+}
+.banner .btn {
+    color: #fff;
+}
 
 /* start cart page */
 .cart {
