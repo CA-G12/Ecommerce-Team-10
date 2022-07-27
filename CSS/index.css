@@ -121,7 +121,77 @@ nav.navbar.navbar-bottom {
 
 
 /* footer style  */
+.footer {
+    padding: 1.5rem 9%;
+}
+.footer .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-gap: 1.5rem;
+}
 
+.footer .boxes .box h3 {
+    font-size: 1.2rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.footer .boxes .box a {
+    display: block;
+    font-size: 1rem;
+    color: var(--light-color);
+    padding: .5rem 0;
+}
+
+.footer .boxes .box a  i {
+    color: var(--green);
+    padding-right: .5rem;
+}
+.footer .boxes .box a:hover i {
+    color: var(--green);
+    padding-right: 1rem;
+}
+.footer .boxes .box .map{
+    width: 100%;
+}
+
+.footer .shear {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .shear i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    background: var(--green);
+    margin: 0 0.3rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.footer .shear i:hover {
+    background: var(--black);
+}
+
+.footer .credit {
+    border-top: var(--border);
+    margin-top: 2rem;
+    padding: 0 1rem;
+    padding-top: 2.5rem;
+    font-size: 1rem;
+    color: var(--light-color);
+    text-align: center;
+}
+.footer .credit span {
+    color: var(--green);
+}
+
+/* media query responsive */
 @media (max-width: 991px) {
     html {
         font-size: 55%;
@@ -153,6 +223,10 @@ nav.navbar.navbar-bottom {
         right: 0;
         left: 0;
         z-index: 10000;
+    }
+    .footer .shear i {
+        width: 30px;
+        height: 30px;
     }
 }
 
