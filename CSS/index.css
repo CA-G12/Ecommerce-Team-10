@@ -24,17 +24,20 @@ header .header-top .social-media {
     color: var(--black);
     cursor: pointer;
 }
+
 header .header-top .social-media i {
     padding: 8px;
     border: 1px solid var(--black);
     border-radius: 50%;
 
 }
-header .header-top .social-media i:hover{
+
+header .header-top .social-media i:hover {
     background: var(--green);
     border: none;
     color: #fff;
 }
+
 .head-icons {
     display: flex;
     align-items: center;
@@ -46,6 +49,7 @@ header .header-top .social-media i:hover{
     color: var(--black);
     cursor: pointer;
 }
+
 .head-icons .cart:hover {
     color: var(--green);
 }
@@ -81,6 +85,7 @@ span.count {
 .header-nav {
     background: var(--green);
 }
+
 .header-nav .navbar {
     text-align: center;
     text-transform: uppercase;
@@ -88,14 +93,17 @@ span.count {
     align-items: center;
     justify-content: center;
 }
+
 .header-nav .navbar a {
     color: #fff;
     padding: 1.2rem;
     font-size: 1rem;
 }
+
 .header-nav .navbar a:hover {
     background: var(--dark-color);
 }
+
 nav.navbar.navbar-bottom {
     background: var(--green);
     position: fixed;
@@ -119,7 +127,104 @@ nav.navbar.navbar-bottom {
 
 
 /* product style  */
+/* #productsList {
+    width: 100%;
+    height: 100%;
 
+} */
+
+#productsList .row {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+#productsList .card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+}
+
+#productsList .card-header {
+    width: 100%;
+    height: 100%;
+}
+
+#productsList .card-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#productsList .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+#productsList .card-body .card-details {
+    display: flex;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 100%;
+    color: var(--mainColor);
+    justify-content: space-between;
+}
+
+#productsList .card-body .card-actions {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#productsList .card:hover .card-body {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    opacity: 1;
+}
+
+
+select {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--mainColor);
+    padding: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--mainColor);
+    background-color: var(--mainBackground);
+    transition: all 0.3s ease-in-out;
+}
+
+select::backdrop {
+    background-color: var(--mainBackground);
+}
 
 /* addproduct style  */
 
@@ -152,6 +257,7 @@ nav.navbar.navbar-bottom {
     background-size: cover;
     background-position: center;
 }
+
 .banner .overlay {
     width: 100%;
     height: 100%;
@@ -164,17 +270,21 @@ nav.navbar.navbar-bottom {
     color: #fff;
 
 }
+
 .banner h4 {
     font-size: 16px;
 
 }
+
 .banner h2 {
     font-size: 30px;
     padding: 10px 0;
 }
+
 .banner h2 span {
-    color: #c50000;   
+    color: #c50000;
 }
+
 .banner .btn {
     color: #fff;
 }
@@ -184,6 +294,7 @@ nav.navbar.navbar-bottom {
     padding: 1.5rem 9%;
     overflow: hidden;
 }
+
 .cart table {
     width: 100%;
     border-collapse: collapse;
@@ -192,6 +303,7 @@ nav.navbar.navbar-bottom {
     overflow-x: scroll;
 
 }
+
 .cart table img {
     width: 70px;
 }
@@ -200,6 +312,7 @@ nav.navbar.navbar-bottom {
     width: 100px;
     text-align: center;
 }
+
 .cart table td:nth-child(1) i {
     font-size: 1.5rem;
     color: #c50000;
@@ -210,16 +323,19 @@ nav.navbar.navbar-bottom {
     width: 150px;
     text-align: center;
 }
+
 .cart table td:nth-child(3) {
     width: 250px;
     text-align: center;
 }
+
 .cart table td:nth-child(4),
 .cart table td:nth-child(5),
 .cart table td:nth-child(6) {
     width: 150px;
     text-align: center;
 }
+
 .cart table td:nth-child(5) input {
     width: 70px;
     padding: 10px 5px 10px 15px;
@@ -250,6 +366,7 @@ nav.navbar.navbar-bottom {
     padding: 30px;
     margin-top: 30px;
 }
+
 .total-cart table {
     border-collapse: collapse;
     width: 100%;
@@ -262,9 +379,11 @@ nav.navbar.navbar-bottom {
     padding: 10px;
     font-size: 13px;
 }
+
 .total-cart h3 {
     padding-bottom: 13px;
 }
+
 .total-cart .buttons {
     display: flex;
     justify-content: flex-end;
@@ -278,6 +397,7 @@ nav.navbar.navbar-bottom {
 .footer {
     padding: 1.5rem 9%;
 }
+
 .footer .boxes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
@@ -297,15 +417,17 @@ nav.navbar.navbar-bottom {
     padding: .5rem 0;
 }
 
-.footer .boxes .box a  i {
+.footer .boxes .box a i {
     color: var(--green);
     padding-right: .5rem;
 }
+
 .footer .boxes .box a:hover i {
     color: var(--green);
     padding-right: 1rem;
 }
-.footer .boxes .box .map{
+
+.footer .boxes .box .map {
     width: 100%;
 }
 
@@ -315,6 +437,7 @@ nav.navbar.navbar-bottom {
     align-items: center;
     justify-content: center;
 }
+
 .footer .shear i {
     width: 40px;
     height: 40px;
@@ -328,6 +451,7 @@ nav.navbar.navbar-bottom {
     border-radius: 50%;
     cursor: pointer;
 }
+
 .footer .shear i:hover {
     background: var(--black);
 }
@@ -341,6 +465,7 @@ nav.navbar.navbar-bottom {
     color: var(--light-color);
     text-align: center;
 }
+
 .footer .credit span {
     color: var(--green);
 }
@@ -350,9 +475,11 @@ nav.navbar.navbar-bottom {
     html {
         font-size: 55%;
     }
+
     .header-top {
         padding: 2rem;
     }
+
     .social-media {
         display: none;
     }
@@ -363,13 +490,16 @@ nav.navbar.navbar-bottom {
         padding: 5px 10px;
         font-size: 12px;
     }
+
     .header-nav {
         font-size: 50%;
         position: relative;
     }
+
     .header-nav .navbar {
         display: none;
     }
+
     nav.navbar.navbar-bottom {
         display: flex;
         position: fixed;
@@ -378,13 +508,16 @@ nav.navbar.navbar-bottom {
         left: 0;
         z-index: 10000;
     }
+
     .footer .shear i {
         width: 30px;
         height: 30px;
     }
+
     .footer .credit {
         margin-bottom: 4rem;
     }
+
     .total-cart {
         width: 100%;
     }
