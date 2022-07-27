@@ -1,3 +1,13 @@
+
+window.onscroll = () => {
+    if (window.scrollY > 70) header.classList.add('active')
+    else header.classList.remove('active')
+}
+
+window.onload = () => {
+    if (window.scrollY > 70) header.classList.add('active')
+    else header.classList.remove('active')
+}
 window.onload = () => {
     RenderProducts();
     let usrType = localStorage.getItem('usertype')
@@ -86,4 +96,6 @@ const ChangeType = (type) => {
     localStorage.setItem('usertype', type);
     window.location.reload()
 }
+
+
 
