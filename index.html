@@ -54,8 +54,8 @@
         </div>
         <div class="header-nav">
             <nav class="navbar navbar-top">
-                <a href="#">home</a>
-                <a href="#">Product</a>
+                <a href="https://ca-g12.github.io/Ecommerce-Team-10/">home</a>
+                <a href="#productsList">Product</a>
                 <a href="#">About us</a>
                 <a href="#">Featured</a>
                 <a href="#">Contact us</a>
@@ -81,16 +81,17 @@
         </div>
     </header>
 
-    <section>
-<label for="Search" id = "searches">Search:</label>
-<input oninput="filterCategory()" id='search' type="text" id = "searches2" Search>
-<select onchange="filterCategory()" name="cars" id="filter-category">
-    <option value="" selected>All</option>
-    <option value="TVs">TVs</option>
-    <option value="Smart Phone">Smart Phone</option>
-    <option value="Laptops">Laptops</option>
-</select>
-
+    <section class="div-search">
+        <div class="search-part">
+            <label for="Search" id = "searches"><i class="fa-solid fa-magnifying-glass"></i></label>
+            <input oninput="filterCategory()" id='search' type="text" id = "searches2" placeholder= "Search" Search>
+        </div>
+        <select onchange="filterCategory()" name="cars" id="filter-category">
+            <option value="" selected>All</option>
+            <option value="TVs">TVs</option>
+            <option value="Smart Phone">Smart Phone</option>
+            <option value="Laptops">Laptops</option>
+        </select>
     </section>
 
     <section id="productsList">
@@ -158,7 +159,7 @@
         <div class="boxes">
             <div class="box">
                 <h3>pur locations</h3>
-                <a href="#"><i class="ri-map-pin-fill"></i>Israil</a>
+                <a href="#"><i class="ri-map-pin-fill"></i>Palestine</a>
                 <a href="#"><i class="ri-map-pin-fill"></i>USA</a>
                 <a href="#"><i class="ri-map-pin-fill"></i>Japan</a>
                 <a href="#"><i class="ri-map-pin-fill"></i>African</a>
@@ -168,7 +169,7 @@
 
             <div class="box">
                 <h3>Quick Links</h3>
-                <a href="./index.html"><i class="ri-arrow-right-fill"></i>Home</a>
+                <a href="https://ca-g12.github.io/Ecommerce-Team-10/index.html"><i class="ri-arrow-right-fill"></i>Home</a>
                 <a href="./index.html"><i class="ri-arrow-right-fill"></i>Product</a>
                 <a href="./index.html"><i class="ri-arrow-right-fill"></i>About</a>
                 <a href="./index.html"><i class="ri-arrow-right-fill"></i>Featured</a>

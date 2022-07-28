@@ -687,14 +687,22 @@ textarea {
     object-fit: contain!important;
 }
 
-#searches {
-    margin: 0 auto;
-    margin-left: 40%;
+.div-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0;
 }
 
-#searches2 {
-    margin-left: 40%;
-
+input#search {
+    outline: none;
+    border: none;
+    width: 250px;
+    background: #e1e1e1;
+    height: 35px;
+    padding-left: 8px;
+    border-radius: 8px;
 }
 
 /* media query responsive */
