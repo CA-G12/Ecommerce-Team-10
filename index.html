@@ -8,9 +8,7 @@
     <!-- title page -->
     <title>iStore - Home</title>
     <!-- css links -->
-    <link rel="shortcut icon"
-        href="https://i.ibb.co/52cFF2B/iconsmall.png"
-        type="image/x-icon">
+    <link rel="shortcut icon" href="https://i.ibb.co/52cFF2B/iconsmall.png" type="image/x-icon">
 
     <link rel="stylesheet" href="./CSS/global.css">
     <link rel="stylesheet" href="./CSS/index.css">
@@ -26,7 +24,7 @@
 <body>
     <header class="header">
         <div class="header-top">
-            <a href="https://ca-g12.github.io/Ecommerce-Team-10/" class="logo">
+            <a href="#" class="logo">
                 <i class="ri-apple-fill"></i>
                 <span>i</span>Store
             </a>
@@ -46,9 +44,10 @@
                     Seller
                     <i class="ri-user-2-fill"></i>
                 </button>
+
                 <div class="cart-shop" onclick="CartPage()">
                     <i class="ri-shopping-cart-fill cart"></i>
-                    <span class="count" id="countSpan" hidden>5</span>
+                    <span class="count" id="countSpan">5</span>
                 </div>
             </div>
         </div>
@@ -81,17 +80,19 @@
         </div>
     </header>
 
-    <section>
-<label for="Search" id = "searches">Search:</label>
-<input oninput="filterCategory()" id='search' type="text" id = "searches2" Search>
-<select onchange="filterCategory()" name="cars" id="filter-category">
-    <option value="" selected>All</option>
-    <option value="TVs">TVs</option>
-    <option value="Smart Phone">Smart Phone</option>
-    <option value="Laptops">Laptops</option>
-</select>
-
-    </section>
+    <div class="actions container">
+        <div class="search-input">
+            <label for="Search" id="searches">Search:</label>
+            <input oninput="filterCategory()" id='search' type="text" id="searches2" placeholder="search" Search>
+        </div>
+        <select onchange="filterCategory()" name="cars" id="filter-category">
+            <option value="" selected>All</option>
+            <option value="TVs">TVs</option>
+            <option value="Smart Phone">Smart Phone</option>
+            <option value="Laptops">Laptops</option>
+        </select>
+        <button class="btn" id="add-new-product-btn">Add New Product</button>
+    </div>
 
     <section id="productsList">
         <div class="container">
@@ -100,33 +101,47 @@
         </div>
     </section>
 
-    <div class="product-form seller">
+    <section style="display: none;" class="product-form seller" id="popUp-add-product">
         <form>
-            <label for="productName">Product Name</label>
-            <input type="text" id="product-name" name="title" required placeholder="Product Name" />
+            <i class="ri-close-fill" id="close-popup"></i>
 
-            <label for="category">Category</label>
-            <select name="cars" id="category">
-                <option value="Computer">TVs</option>
-                <option value="Tablet">Smart Phone</option>
-                <option value="Mobile">Laptops</option>
-            </select>
-            <label for="description">Description</label>
-            <textarea name="description" id="description" required placeholder="Description"></textarea>
-            <!-- <input type="text" id="description" required placeholder="Description" /> -->
+            <div class="product-name">
+                <label for="productName">Product Name</label>
+                <input type="text" id="product-name" name="title" required placeholder="Product Name" />
+            </div>
 
-            <label for="imgLink">Image Link</label>
-            <input name="image" type="text" id="img-link" required placeholder="Image Link" />
+            <div class="category-price">
+                <div class="product-category">
+                    <label for="category">Category</label>
+                    <select name="cars" id="category">
+                        <option value="Computer">TVs</option>
+                        <option value="Tablet">Smart Phone</option>
+                        <option value="Mobile">Laptops</option>
+                    </select>
+                </div>
 
-            <label for="price">Price</label>
-            <input type="text" id="price" name="price" required placeholder="Price" />
+                <div class="product-price">
+                    <label for="price">Price</label>
+                    <input type="text" id="price" name="price" required placeholder="Price" />
+                </div>
+            </div>
 
-            <div class="formBtns">
+            <div class="product-img">
+                <label for="imgLink">Image Link</label>
+                <input name="image" type="text" id="img-link" required placeholder="Image Link" />
+            </div>
+
+            <div class="product-description">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" required placeholder="Description"></textarea>
+            </div>
+
+            <div class="form-btn">
                 <button class="submit" type="submit">Submit</button>
                 <button class="reset" type="reset">Reset</button>
             </div>
         </form>
-    </div>
+    </section>
 
     <section class="about">
         <img src="https://media.istockphoto.com/photos/young-multicultural-couple-looking-for-new-smart-phone-to-buy-woman-picture-id1068874642?b=1&k=20&m=1068874642&s=170667a&w=0&h=h9QQVLsFG5AvacGgJnszeiNRNQwLaIFUw_w9gg_kuT4="

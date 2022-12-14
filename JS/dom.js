@@ -11,8 +11,12 @@ let priceSpan = document.querySelector('.price');
 let quantityBase = 1;
 let descriptionSpan = document.querySelector('.description');
 let titleSpan = document.querySelector('.product-title');
-let countSpan = document.querySelector('.countSpan')
 const ArrayofCartObjects = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]');
+
+const closePopUpIcon = document.querySelector('i#close-popup ');
+const popUpAddProduct = document.querySelector('#popUp-add-product');
+const btnAddProduct = document.getElementById('add-new-product-btn')
+
 
 // Window Events 
 window.onscroll = () => {
@@ -31,6 +35,7 @@ window.onload = () => {
     }
     // userTypeSwitcher.value = usrType
     if (usrType == 'client') {
+        btnAddProduct.style.display = 'none'
         document.querySelectorAll(`.client`).forEach(e => e.style.display = 'inline-block')
         document.querySelectorAll(`.seller`).forEach(e => e.style.display = 'none')
     }
@@ -68,9 +73,7 @@ function RenderProducts(products) {
                             </button>
                             <button class="client btn" title="Add To Cart" onclick = "addToCart(${ele.id})">
                                 <i class="fa-solid fa-cart-plus"></i>
-                                </button>
-                            <button class="seller btn" title="Add A Product">
-                            <i class="fa-solid fa-plus"></i>
+                            </button>
                             <button onClick=(RemoveProduct(${ele.id})) class="seller btn" title="Remove">
                                 <i class="fa-solid fa-calendar-xmark"></i>
                             </button>
@@ -168,3 +171,46 @@ const category = document.querySelector('#filter-category');
     const filteredData = getAllProducts(search.value, category.value);
     RenderProducts(filteredData)
 }
+
+
+// show & hide pop-up add new product via seller
+closePopUpIcon.addEventListener('click', () => {
+    popUpAddProduct.style.display = 'none'
+})
+
+btnAddProduct.addEventListener('click', () => {
+    popUpAddProduct.style.display = 'block'
+})
+
+// count product in cart
+const addToCartBtn = document.querySelectorAll('.addToCart');
+let countNum = document.querySelector('#countSpan');
+
+countNum.textContent = 0;
+
+for (var i = 0; i < addToCartBtn.length; i++) {
+    addToCartBtn[i].addEventListener('click', () => {
+        cartCount()
+    })
+}
+
+function cartCount() {
+    let count = localStorage.getItem('cartCount');
+    count= parseInt(count);
+    if(count) {
+        localStorage.setItem('cartCount', count + 1);
+        countNum.textContent = count +1
+
+    } else {
+        localStorage.setItem('cartCount', 1);
+        countNum.textContent = count =1;
+
+    }
+}
+function displayCart() {
+    let count = localStorage.getItem('cartCount');
+    if(count) {
+        countNum.textContent = count;
+    }
+}
+displayCart();

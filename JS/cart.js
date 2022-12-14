@@ -12,19 +12,19 @@ function removeInCart(arr, id) {
 
 function getCArtItems() {
     const ArrayofCartObjects = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]');
-    console.log(ArrayofCartObjects)
     const table = document.querySelector('#cart tbody')
     table.innerHTML = '';
     let txt = '';
     ArrayofCartObjects.forEach(item => {
+        console.log(item);
         txt += `
         <tr id='card-item${item.id}'>
         <td><a><i class="ri-delete-bin-2-fill" onClick='RemoveFromCart(${item.id})' ></i></a></td>
-        <td><img src="https://images.unsplash.com/photo-1506777775294-c79f090bac1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZHVjdCUyMGlwaG9uZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="product"></td>
+        <td><img src=${item.image} alt="product"></td>
         <td>${item.title}</td>
         <td>$ ${item.price}</td>
-        <td><input type="number" value="1"></td>
-        <td>$ ${item.price * 2}</td>
+        <td>${item.quantity}</td>
+        <td>$ ${item.price * item.quantity}</td>
     </tr>
         `
     })

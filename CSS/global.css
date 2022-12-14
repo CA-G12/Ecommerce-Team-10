@@ -10,7 +10,7 @@
 }
 
 :root{
-    --green: #27ea60;
+    --green: #49cb6f;
     --dark-color: #219150;
     --light-color: #666;
     --black: #444;
@@ -20,7 +20,6 @@
 }
 
 html{
-    /* overflow: hidden; */
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
 }
@@ -44,7 +43,7 @@ a {
     padding: 10px 20px;
     border: 1px solid var(--mainColor);
     border-radius: 5px;
-    color: var(--black);
+    color: #fff;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
@@ -55,7 +54,6 @@ a {
 
 .btn:hover{
     background-color: var(--black);
-    color: #fff;
 }
 
 
