@@ -1,4 +1,3 @@
-// Render Cart
 function removeInCart(arr, id) {
     const myArr = [...arr];
     let idx = myArr.findIndex((e) => {
@@ -10,13 +9,12 @@ function removeInCart(arr, id) {
     return myArr;
 }
 
-function getCArtItems() {
-    const ArrayofCartObjects = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]');
+function getCrtItems() {
+    const arrayOfCartObjects = JSON.parse(localStorage.getItem('ArrayOfCartObjects') || '[]');
     const table = document.querySelector('#cart tbody')
     table.innerHTML = '';
     let txt = '';
-    ArrayofCartObjects.forEach(item => {
-        console.log(item);
+    arrayOfCartObjects.forEach(item => {
         txt += `
         <tr id='card-item${item.id}'>
         <td><a><i class="ri-delete-bin-2-fill" onClick='RemoveFromCart(${item.id})' ></i></a></td>
@@ -31,14 +29,14 @@ function getCArtItems() {
     table.innerHTML = txt;
 }
 
-getCArtItems();
+getCrtItems();
 
 function RemoveFromCart(id) {
-    let data = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]')
+    let data = JSON.parse(localStorage.getItem('ArrayOfCartObjects') || '[]')
     if (!confirm('Are You Sure To Delete This Item?')) return;
     let newData = removeInCart(data, id);
     if (!newData) return;
-    localStorage.setItem('ArrayofCartObjects', JSON.stringify(newData))
+    localStorage.setItem('ArrayOfCartObjects', JSON.stringify(newData))
     document.querySelector(`#card-item${id}`).style.display = 'none'
 }
 

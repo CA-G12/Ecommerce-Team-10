@@ -1,4 +1,4 @@
-
+// const removeProduct = (products, productId) => products.filter(product => product.id !== productId)
 function removeInCart(arr, id) {
     const myArr = [...arr];
     let idx = myArr.findIndex((e) => {
@@ -10,7 +10,13 @@ function removeInCart(arr, id) {
     return myArr;
 }
 
-const DeleteProduct = (data, id) => {
+const deleteProduct = (data, id) => {
+/*
+    here you are updating the original array(that is passed as an input to the function) by pushing a new element to it which is not pure.
+
+    const addNewProduct = (products, product) => [...products, product]
+*/
+
     let idx = data.findIndex((e) => {
         if (e.id == id)
             return true;
@@ -19,7 +25,7 @@ const DeleteProduct = (data, id) => {
     data.splice(idx, 1);
     return data;
 }
-function AddToArray(array , obj){
+function addToArray(array , obj){
     if(!array) array = []
     array.push(obj)
     return array
@@ -27,7 +33,7 @@ function AddToArray(array , obj){
 if (typeof module !== "undefined") {
     module.exports = {
         removeInCart,
-        DeleteProduct,
-        AddToArray,
+        deleteProduct,
+        addToArray,
     }
 }
