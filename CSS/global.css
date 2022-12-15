@@ -1,0 +1,66 @@
+/* google fonts cdn */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --green: #5BB318;
+    --dark-color: #219150;
+    --light-color: #666;
+    --black: #444;
+    --border: .1rem solid rgba(0,0,0,.1);
+    --border-hover: .1rem solid var(--black);
+    --box-shadow : 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+html{
+    /* overflow: hidden; */
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    position: relative;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+a {
+    text-decoration: none;
+
+}
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--mainColor);
+    border-radius: 5px;
+    color: var(--black);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: var(--green);
+    margin-left: 4px;
+}
+
+.btn:hover{
+    background-color: var(--black);
+    color: #fff;
+}
+
+
+@media (min-width: 768px){
+    .container{
+        width: 100%;
+    }
+}
