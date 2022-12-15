@@ -1,9 +1,8 @@
-
 const header = document.querySelector('header .header-nav');
-let plusOneBtn = document.querySelector('.PlusOne');
-let minusOneBtn = document.querySelector('.MinusOne');
-let quantitySpan = document.getElementById('quantitySpan');
-let smallImages = document.querySelectorAll('.product-small-image');
+const plusOneBtn = document.querySelector('.PlusOne');
+const minusOneBtn = document.querySelector('.MinusOne');
+const quantitySpan = document.getElementById('quantitySpan');
+const smallImages = document.querySelectorAll('.product-small-image');
 let mainImage = document.querySelector('.product-image');
 let mainDiv = document.querySelector('.product-popup');
 let xButton = document.querySelector('.x');
@@ -11,30 +10,38 @@ let priceSpan = document.querySelector('.price');
 let quantityBase = 1;
 let descriptionSpan = document.querySelector('.description');
 let titleSpan = document.querySelector('.product-title');
-let countSpan = document.querySelector('.countSpan')
-const ArrayofCartObjects = JSON.parse(localStorage.getItem('ArrayofCartObjects') || '[]');
+const arrayOfCartObjects = JSON.parse(localStorage.getItem('ArrayOfCartObjects') || '[]');
 
+const closePopUpIcon = document.querySelector('i#close-popup ');
+const popUpAddProduct = document.querySelector('#popUp-add-product');
+const btnAddProduct = document.getElementById('add-new-product-btn')
+
+const headerHeight = 70
+const CLIENT = 'client';
+const SELLER = 'seller';
 // Window Events 
 window.onscroll = () => {
-    if (window.scrollY > 70) header.classList.add('active')
+    if (window.scrollY > headerHeight) header.classList.add('active')
     else header.classList.remove('active')
 }
 
 window.onload = () => {
-    if (window.scrollY > 70) header.classList.add('active')
+    if (window.scrollY > headerHeight) header.classList.add('active')
     else header.classList.remove('active')
     RenderProducts();
-    let usrType = localStorage.getItem('usertype')
+    let usrType = localStorage.getItem('userType')
     if (usrType == null) {
-        localStorage.setItem('usertype', 'client')
-        usrType = 'client'
+        localStorage.setItem('userType', CLIENT)
+        usrType = CLIENT
     }
+
     // userTypeSwitcher.value = usrType
-    if (usrType == 'client') {
+    if (usrType == CLIENT) {
+        btnAddProduct.style.display = 'none'
         document.querySelectorAll(`.client`).forEach(e => e.style.display = 'inline-block')
         document.querySelectorAll(`.seller`).forEach(e => e.style.display = 'none')
     }
-    else if (usrType == 'seller') {
+    else if (usrType == SELLER) {
         document.querySelectorAll(`.seller`).forEach(e => e.style.display = 'inline-block')
         document.querySelectorAll(`.client`).forEach(e => e.style.display = 'none')
     }
@@ -42,7 +49,7 @@ window.onload = () => {
 
 // Page Settings
 const ChangeType = (type) => {
-    localStorage.setItem('usertype', type);
+    localStorage.setItem('userType', type);
     window.location.reload()
 }
 
@@ -68,9 +75,7 @@ function RenderProducts(products) {
                             </button>
                             <button class="client btn" title="Add To Cart" onclick = "addToCart(${ele.id})">
                                 <i class="fa-solid fa-cart-plus"></i>
-                                </button>
-                            <button class="seller btn" title="Add A Product">
-                            <i class="fa-solid fa-plus"></i>
+                            </button>
                             <button onClick=(RemoveProduct(${ele.id})) class="seller btn" title="Remove">
                                 <i class="fa-solid fa-calendar-xmark"></i>
                             </button>
@@ -85,7 +90,7 @@ function RenderProducts(products) {
 function RemoveProduct(id) {
     let data = getAllProducts()
     if (!confirm('Are You Sure To Delete This Item?')) return;
-    let newData = DeleteProduct(data, id);
+    let newData = deleteProduct(data, id);
     if (!newData) return;
     localStorage.setItem('products', JSON.stringify(newData))
     document.querySelector(`#prod${id}`).style.display = 'none'
@@ -119,7 +124,6 @@ function openPopUp(id) {
     })[0];
 
     detailsid.value = id;
-
     mainImage.src = currentItem.image;
     priceSpan.textContent = "$" + currentItem.price
     descriptionSpan.textContent = currentItem.description
@@ -151,9 +155,9 @@ function addProduct() {
         category: frameElement.cars.value,
         image: frameElement.image.value,
     }
-    let newarr = AddToArray(getAllProducts(), obj)
-    localStorage.setItem('products', JSON.stringify(newarr))
-    RenderProducts(newarr)
+    let newArr = addToArray(getAllProducts(), obj)
+    localStorage.setItem('products', JSON.stringify(newArr))
+    RenderProducts(newArr)
 }
 document.querySelector('form').onsubmit = (e) => {
     addProduct()
@@ -168,3 +172,46 @@ const category = document.querySelector('#filter-category');
     const filteredData = getAllProducts(search.value, category.value);
     RenderProducts(filteredData)
 }
+
+
+// show & hide pop-up add new product via seller
+closePopUpIcon.addEventListener('click', () => {
+    popUpAddProduct.style.display = 'none'
+})
+
+btnAddProduct.addEventListener('click', () => {
+    popUpAddProduct.style.display = 'block'
+})
+
+// count product in cart
+const addToCartBtn = document.querySelectorAll('.addToCart');
+let countNum = document.querySelector('#countSpan');
+countNum.textContent = 0;
+
+for (var i = 0; i < addToCartBtn.length; i++) {
+    addToCartBtn[i].addEventListener('click', () => {
+        cartCount()
+    })
+}
+
+function cartCount() {
+    let count = localStorage.getItem('cartCount');
+    count= parseInt(count);
+    if(count) {
+        localStorage.setItem('cartCount', count + 1);
+        countNum.textContent = count +1
+
+    } else {
+        localStorage.setItem('cartCount', 1);
+        countNum.textContent = count =1;
+
+    }
+}
+
+function displayCart() {
+    let count = localStorage.getItem('cartCount');
+    if(count) {
+        countNum.textContent = count;
+    }
+}
+displayCart();

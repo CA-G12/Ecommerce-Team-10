@@ -3,7 +3,7 @@ const getAllProducts = (search = '', category = '') => {
     let data = localStorage.getItem('products');
     data = JSON.parse(data);
 
-    if (!data || !data.length) return rendertempdata()
+    if (!data || !data.length) return renderTempData()
 
     data = data.filter((e) =>
         e.title.toLowerCase().includes(search.trim().toLowerCase()) &&
@@ -16,14 +16,14 @@ function addToCart() {
     let currentItem = getAllProducts().filter(e => e.id == detailsid.value)[0];
 
     currentItem.quantity = quantityBase;
-    ArrayofCartObjects.push(currentItem);
-    localStorage.setItem('ArrayofCartObjects', JSON.stringify(ArrayofCartObjects));
+    arrayOfCartObjects.push(currentItem);
+    localStorage.setItem('ArrayOfCartObjects', JSON.stringify(arrayOfCartObjects));
 
 }
 
 
-const rendertempdata = () => {
-    let dta = [{
+const renderTempData = () => {
+    let data = [{
         "id": 1,
         "title": "Samsung - 88 Class - LED TV",
         "price": 499,
@@ -94,8 +94,8 @@ const rendertempdata = () => {
         "description": "Laptops are one of the most useful tools on the planet.",
         "category": "Laptops"
     }]
-    localStorage.setItem('products', JSON.stringify(dta));
+    localStorage.setItem('products', JSON.stringify(data));
 
 }
 
-rendertempdata();
+renderTempData();
